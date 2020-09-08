@@ -1,3 +1,19 @@
+'''
+https://stackoverflow.com/questions/36996391/importing-another-project-as-modules-in-python
+https://realpython.com/absolute-vs-relative-python-imports/
+'''
+
+# using this to import markov.py from another project
+#im naming it as pylib so that we won't get confused between os.path and sys.path
+from sys import path as pylib 
+import os
+# pylib += [os.path.abspath(r'/projectfoo')]
+# from projectfoo import preprocessor
+
+import sys
+sys.path.append('..')
+from Markov import markov
+
 def levenshtein(a,b,i=None,j=None):
 	if i == None:
 		i = len(a)
